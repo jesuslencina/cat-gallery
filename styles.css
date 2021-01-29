@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+}
+
+/* COMMON ELEMENTS */
+
+button {
+  border: 2pt solid #386fa4;
+  color: #386fa4;
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 10px;
+}
+
+button:hover {
+  border-color: #133c55;
+  color: white;
+  font-weight: 500;
+  background-color: #386fa4;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+/* ---------------*/
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+  background-color: #59a5d8;
+  color: white;
+}
+
+#start {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 85vh;
+}
+
+#start button {
+  font-size: 2rem;
+}
+
+#main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 85vh;
+}
+
+#filters {
+  align-self: flex-start;
+  width: 100%;
+  background-color: #91e5f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#filters input[type='search'],
+select {
+  margin: 0.75rem 1.5rem;
+  font-size: 1.05rem;
+}
+
+#inputPictures,
+#inputGIFS {
+  margin-left: 0.75rem;
+  margin-right: 0.25rem;
+}
+
+.hidden {
+  display: none !important;
+}
