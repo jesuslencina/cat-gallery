@@ -20,14 +20,17 @@
         <button onclick="startApp()">Wanna see some amazing cats?</button>
     </div>
     <section id="main" class="hidden">
-        <section id="filters">
+        <div id="filters">
             <input type="search" id="searchInput" placeholder="Search cats...">
             <select>
                 <option>Breed</option>
             </select>
-            <input type="radio" id="inputPictures"> <label for="inputPictures">Pictures</label>
-            <input type="radio" id="inputGIFS"> <label for="inputGIFS">GIFS</label>
-        </section>
+            <input type="checkbox" checked id="inputPictures"> <label for="inputPictures">Pictures</label>
+            <input type="checkbox" checked id="inputGIFS"> <label for="inputGIFS">GIFS</label>
+        </div>
+        <div id="picList">
+
+        </div>
     </section>
     <script src="main.js"></script>
 
