@@ -98,6 +98,10 @@ select:focus {
   position: relative;
 }
 
+.cat-pic-container b {
+  display: none;
+}
+
 .cat-pic-img {
   width: 250px;
   height: 200px;
@@ -124,4 +128,21 @@ select:focus {
 
 .hidden {
   display: none !important;
+}
+
+@media screen and (max-width: 800px) {
+  .cat-pic-container b {
+    display: block;
+    text-align: center;
+    color: #3e7ca5;
+  }
+
+  #picList {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .overlay {
+    display: none !important;
+  }
 }

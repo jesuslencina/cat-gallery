@@ -35,7 +35,7 @@ const renderPictures = (array) => {
     //FISRT CONTAINER
     let element = document.createElement('div');
     element.classList.add('cat-pic-container');
-    element.innerHTML = `<img class="cat-pic-img" src=${array[i].url} alt="A Cat.">`;
+    element.innerHTML = `<img class="cat-pic-img" src=${array[i].url} alt="A Cat."> <br> <b>CLICK TO LOVE THIS CAT</b>`;
     //OVERLAY
     let overlay = document.createElement('div');
     overlay.classList.add('overlay');
