@@ -17,13 +17,16 @@
         <h1>CAT GALLERY</h1>
     </header>
     <div id="start">
-        <button onclick="startApp()">Wanna see some amazing cats?</button>
+        <div>
+            <input type="checkbox" id="agreement"> <label for="agreement">I confirm that I love cats.</label>
+        </div>
+        <button id="agreement-button" disabled onclick="startApp()">See some amazing cats</button>
     </div>
     <section id="main" class="hidden">
         <div id="filters">
             <input type="search" id="searchInput" placeholder="Search cats...">
-            <select>
-                <option>Breed</option>
+            <select id="breedSelect">
+                <option>Any Breed</option>
             </select>
             <input type="checkbox" checked id="inputPictures"> <label for="inputPictures">Pictures</label>
             <input type="checkbox" checked id="inputGIFS"> <label for="inputGIFS">GIFS</label>

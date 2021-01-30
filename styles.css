@@ -14,6 +14,20 @@ button {
   border-radius: 10px;
 }
 
+button:disabled {
+  border: 2pt solid #1b4369;
+  color: #255683;
+  background-color: rgb(167, 167, 167);
+}
+
+button:disabled:hover {
+  border: 2pt solid #1b4369;
+  color: #255683;
+  background-color: rgb(167, 167, 167);
+  font-weight: initial;
+  cursor: not-allowed;
+}
+
 button:hover {
   border-color: #133c55;
   color: white;
@@ -39,9 +53,18 @@ header {
 
 #start {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 85vh;
+}
+
+#start div {
+  margin: 1.5rem 0;
+}
+
+#start label {
+  font-size: 1.25rem;
 }
 
 #start button {

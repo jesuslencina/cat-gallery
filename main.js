@@ -1,9 +1,24 @@
+///VARIABLE INITIALIZATION
 const Main = document.getElementById('main');
 const PicList = document.getElementById('picList');
+const BreedSelect = document.getElementById('breedSelect');
 
+let breedList = [];
+
+///DOM LISTENERS
+document.getElementById('agreement').addEventListener('change', () => {
+  if ((document.getElementById('agreement').checked = true)) {
+    document.getElementById('agreement-button').disabled = false;
+  } else {
+    document.getElementById('agreement-button').disabled = true;
+  }
+});
+
+///FUNCTIONS
 const startApp = () => {
   document.getElementById('start').classList.toggle('hidden');
   getInitialPictures();
+  getBreeds();
   Main.classList.remove('hidden');
 };
 
@@ -35,7 +50,7 @@ const renderPictures = (array) => {
     //FISRT CONTAINER
     let element = document.createElement('div');
     element.classList.add('cat-pic-container');
-    element.innerHTML = `<img class="cat-pic-img" src=${array[i].url} alt="A Cat."> <br> <b>CLICK TO LOVE THIS CAT</b>`;
+    element.innerHTML = `<img class="cat-pic-img" src=${array[i].url} alt="A Cat."> <br> <b>CLICK ON PIC TO LOVE THIS CAT</b>`;
     //OVERLAY
     let overlay = document.createElement('div');
     overlay.classList.add('overlay');
@@ -61,4 +76,30 @@ const showOverlay = (overlay) => {
 
 const hideOverlay = (overlay) => {
   overlay.classList.add('hidden');
+};
+
+const getBreeds = async () => {
+  let completeArray = [];
+
+  let requestOptions = {
+    method: 'GET',
+    redirect: 'follow',
+  };
+
+  await fetch('https://api.thecatapi.com/v1/breeds', requestOptions)
+    .then((response) => response.text())
+    .then((result) => (completeArray = JSON.parse(result)))
+    .catch((error) => console.log('error', error));
+
+  for (let index = 0; index < completeArray.length; index++) {
+    let breedObject = {
+      id: completeArray[index].id,
+      name: completeArray[index].name,
+    };
+    breedList.push(breedObject);
+
+    let breedOption = document.createElement('option');
+    breedOption.innerHTML = completeArray[index].name;
+    BreedSelect.appendChild(breedOption);
+  }
 };
